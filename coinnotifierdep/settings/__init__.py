@@ -11,12 +11,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os, sys
 from os.path import join, dirname
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.append(os.path.join(BASE_DIR, 'apps'))
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
